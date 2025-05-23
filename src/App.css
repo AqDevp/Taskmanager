@@ -1,38 +1,452 @@
-.App {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+}
+
+
+.dashboard-container {
+  min-height: 100vh;
+  background-color: #1f2123;
+  padding: 2rem;
+}
+
+.dashboard-wrapper {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.dashboard-title {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  color: #8aa5de;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-subtitle {
+  color: #8b9ab0;
+}
+
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+
+.card {
+  background-color: #2b3035;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
+  padding: 1.5rem;
+}
+
+
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.section-header-with-counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.section-icon {
+  font-size: 1.125rem;
+  margin-right: 0.5rem;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  color: #cfd1d6;
+}
+
+.task-counter {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #6b7280;
+}
+
+
+.profile-section {
+  grid-column: span 1;
+}
+
+.profile-content {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.avatar {
+  width: 5rem;
+  height: 5rem;
+  background: linear-gradient(to bottom right, #60a5fa, #8b5cf6);
+  border-radius: 50%;
+  margin: 0 auto 1rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.avatar-text {
+  color: white;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+.profile-name {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+.profile-email {
+  color: #9ba8bb;
+  margin-bottom: 1rem;
+}
+
+.profile-details {
+  text-align: left;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.detail-row-last {
+  border-bottom: none;
+}
+
+.detail-label {
+  color: #b2b6bc;
+}
+
+.detail-value {
+  font-weight: 500;
+  color: #f5f6f9;
+}
+
+/* Tasks Section */
+.tasks-section {
+  grid-column: span 1;
+}
+
+.add-task-container {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.task-input {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  background-color: #535960;
+  color: white;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  outline: none;
+  transition: all 150ms ease-in-out;
+}
+
+.task-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.add-button {
+  padding: 0.5rem 1rem;
+  background-color: #5b89ec;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: background-color 150ms ease-in-out;
+}
+
+.add-button:hover {
+  background-color: #1d4ed8;
+}
+
+.add-icon {
+  font-size: 0.875rem;
+}
+
+.task-list {
+  max-height: 24rem;
+  overflow-y: auto;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  transition: background-color 150ms ease-in-out;
+  margin-bottom: 0.75rem;
+}
+
+.task-item:hover {
+ background-color: #3c4044;
+}
+
+.task-item:last-child {
+  margin-bottom: 0;
+}
+
+.task-checkbox {
+  background-color: #5b89ec;
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+.task-content {
+  flex: 1;
+}
+
+.task-text {
+  color: #dbe2f3;
+}
+
+.task-text-completed {
+  color: #6b7280;
+  text-decoration: line-through;
+}
+
+.priority-badge {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  text-transform: capitalize;
+}
+
+.priority-high {
+  color: #dc2626;
+  background-color: #fef2f2;
+}
+
+.priority-medium {
+  color: #ca8a04;
+  background-color: #fefce8;
+}
+
+.priority-low {
+  color: #16a34a;
+  background-color: #f0fdf4;
+}
+
+.priority-default {
+  color: #4b5563;
+  background-color: #f9fafb;
+}
+
+
+.stats-section {
+  grid-column: span 1;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.stat-blue {
+  background-color: #1f2022;
+}
+
+.stat-green {
+  background-color:  #1f2022;
+}
+
+.stat-orange {
+  background-color:  #1f2022;
+}
+
+.stat-red {
+  background-color:  #1f2022;
+}
+
+.stat-number {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.stat-blue .stat-number {
+  color: #739ff8;
+}
+
+.stat-green .stat-number {
+  color: #67ee99;
+}
+
+.stat-orange .stat-number {
+  color: #f09565;
+}
+
+.stat-red .stat-number {
+  color: #dc2626;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #7f92ac;
+}
+
+.stat-sublabel {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  margin-top: 0.25rem;
+}
+
+.stat-green .stat-sublabel {
+  color: #15803d;
+}
+
+.stat-red .stat-sublabel {
+  color: #b91c1c;
+}
+
+
+.progress-section {
+  margin-top: 1.5rem;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: whitesmoke;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 1rem;
+  background-color: #374151;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #3b82f6;
+  transition: width 0.3s ease-in-out;
+}
+
+.profile-form input {
+  width: 100%;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 1rem;
+  background-color: #35393f;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 2rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .dashboard-title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .dashboard-subtitle {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .main-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .add-task-container {
+    flex-direction: column;
+  }
+
+  .task-input {
+    width: 100%;
+  }
+
+  .add-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-content {
+    text-align: center;
+  }
+
+  .detail-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .progress-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-checkbox {
+    margin-bottom: 0.5rem;
   }
 }
