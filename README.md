@@ -1,10 +1,20 @@
-Here's your content formatted as a professional and clear `README.md` file for your React Dashboard project:
-
----
-
 # React Dashboard
 
 A responsive task management dashboard built using React. This project allows users to manage their profile and tasks, and view task statistics in a clean and responsive layout.
+
+![image](https://github.com/user-attachments/assets/c9aee54c-1e63-472f-a69d-2d919c1d2d32)
+
+
+![image](https://github.com/user-attachments/assets/97fbad77-d605-48dd-8f25-e5596f1e91e9)
+
+
+![image](https://github.com/user-attachments/assets/f3aef576-65d8-4d4b-9e37-7207a2d02ae0)
+
+
+
+
+
+
 
 ---
 
