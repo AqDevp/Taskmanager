@@ -96,7 +96,7 @@ A responsive task management dashboard built using React. This project allows us
 2. Navigate to the project directory:
 
    ```bash
-   cd react-dashboard
+   cd react-taskm
    ```
 3. Install dependencies:
 
